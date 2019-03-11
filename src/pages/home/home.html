@@ -1,14 +1,14 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Lorem Picsum
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content padding (ionScrollEnd)="onScrollEnd($event)">
+  <ion-list>
+    <button ion-item [navPush]="listScroll">list images with scroll</button>
+    <button ion-item [navPush]="listVirtualScroll">list images with virtual scroll</button>
+  </ion-list>
 </ion-content>

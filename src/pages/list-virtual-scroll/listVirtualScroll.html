@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      List with Virtual Scroll
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list [virtualScroll]="images">
+    <ion-list-header *ngIf="images">
+      Total {{ images?.length }}
+    </ion-list-header>
+
+    <ion-item *virtualItem="let image">
+      <ion-card>
+        <img [src]="image.src" />
+        <ion-card-content>
+          <ion-card-title>
+            {{ image.author }}
+          </ion-card-title>
+          <p>
+            {{ image.filename }}
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>
