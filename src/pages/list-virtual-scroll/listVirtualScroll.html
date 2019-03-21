@@ -14,7 +14,8 @@
 
     <ion-item *virtualItem="let image">
       <ion-card>
-        <img [src]="image.src" />
+        <img src="/assets/imgs/logo.png" width="200"  height="100" *ngIf="!image.loaded"/>
+        <img [src]="image.src" (load)="image.loaded = true"/>
         <ion-card-content>
           <ion-card-title>
             {{ image.author }}

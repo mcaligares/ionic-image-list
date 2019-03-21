@@ -8,6 +8,7 @@ export class Image {
   public author: string;
   public author_url: string;
   public post_url: string;
+  public loaded: boolean = false;
 
   constructor(data: any = null) {
     if (data) {
